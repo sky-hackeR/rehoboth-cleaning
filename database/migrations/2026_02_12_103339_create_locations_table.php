@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('state');
             $table->string('zip_codes');
             $table->string('manager_email');
+            $table->string('address');    
+            $table->string('phone_number'); 
             $table->timestamps();
             $table->softDeletes();
         });

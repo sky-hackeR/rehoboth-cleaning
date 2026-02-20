@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');             
             $table->string('slug')->unique();   
-            $table->text('content');            
+            $table->text('content');  
+            $table->text('description');          
             $table->string('meta_title');       
             $table->decimal('base_price', 8, 2); 
             $table->string('image_path')->nullable(); 
