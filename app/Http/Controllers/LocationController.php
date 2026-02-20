@@ -21,6 +21,15 @@ class LocationController extends Controller
      */
     public function show(Location $location): View
     {
-        return view('locations.show', compact('location'));
+        $otherLocations = Location::where('id', '!=', $location->id)->get();
+        $configContent = config("location.content.{$location->slug}")?: config('location.content.default', []);
+        $contentTitle = data_get($configContent, 'title', 'Cleaning Services');
+        $contentBody  = data_get($configContent, 'body', '');
+        return view('locations.show', [
+            'location' => $location,
+            'otherLocations' => $otherLocations,
+            'contentTitle' => $contentTitle,
+            'contentBody' => $contentBody,
+        ]);
     }
 }
