@@ -3,25 +3,26 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Quote extends Model
 {
-    //
+    use SoftDeletes;
 
     protected $fillable = [
         'customer_name',
         'email',
-        'phone_number',
+        'phone',
         'service_id',
-        'location_id', // Links to the specific branch
-        'square_footage',
-        'total_estimate',
-        'status',      // pending, sent, closed, lost
-        'source'       // web or whatsapp
+        'location_id',
+        'sq_ft',
+        'estimated_price',
+        'status',
+        'source'
     ];
 
     /**
-     * Get the service requested in this quote.
+     * Relationship: Quote belongs to a Service
      */
     public function service()
     {
@@ -29,22 +30,24 @@ class Quote extends Model
     }
 
     /**
-     * Get the location/branch responsible for this quote.
+     * Relationship: Quote belongs to a Location
      */
     public function location()
     {
         return $this->belongsTo(Location::class);
     }
 
-
-    public function calculateAndSend()
+    /**
+     * Calculate estimate based on service base price.
+     */
+    public function calculateEstimate()
     {
-        // Example: $0.15 per sqft + $50 base fee
-        $rate = $this->service_id == 1 ? 0.12 : 0.18;
-        $this->total_estimate = ($this->sqft * $rate) + 50;
-        $this->save();
+        if (!$this->service) {
+            return;
+        }
 
-        // Trigger Email (We'll build the Mailable next)
-        \Mail::to($this->email)->send(new \App\Mail\QuoteGenerated($this));
+        $baseFee = 50;
+        $this->estimated_price = ($this->sq_ft * $this->service->base_price) + $baseFee;
+        $this->save();
     }
 }
