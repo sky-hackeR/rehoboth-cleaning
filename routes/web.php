@@ -42,3 +42,4 @@ Route::post('/whatsapp/webhook', [WhatsAppController::class, 'handle'])
 
 // --- Thank You / Success Page ---
 Route::view('/quote-success', 'pages.thanks')->name('quote.success');
+Route::get('/quote', \App\Livewire\QuoteWizard::class)->name('quote');

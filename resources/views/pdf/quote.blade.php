@@ -32,14 +32,14 @@
         <tbody>
             <tr>
                 <td>{{ $quote->service->name }}</td>
-                <td>{{ number_format($quote->square_footage) }} sq. ft.</td>
+                <td>{{ number_format($quote->sq_ft) }} sq. ft.</td>
                 <td>${{ number_format($quote->service->base_price, 2) }}/sqft</td>
             </tr>
         </tbody>
     </table>
 
     <div class="total-box">
-        <strong>Estimated Monthly Total: ${{ number_format($quote->total_estimate, 2) }} CAD</strong>
+        <strong>Estimated Monthly Total: ${{ number_format($quote->estimated_price, 2) }} CAD</strong>
         <p style="font-size: 12px; color: #777;">*Prices subject to site walkthrough. Taxes not included.</p>
     </div>
 

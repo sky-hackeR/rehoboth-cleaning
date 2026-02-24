@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 if (!function_exists('about_image')) {
 
     /**
-     * Resize and cache About Team images.
+     * Resize and cache About Team images with a focus on the top of the frame.
      *
      * @param string $filename
      * @param int $size
@@ -27,16 +27,20 @@ if (!function_exists('about_image')) {
             File::makeDirectory($cacheDir, 0755, true);
         }
 
+        $version = 'v2';
         $extension = pathinfo($filename, PATHINFO_EXTENSION);
         $nameOnly = pathinfo($filename, PATHINFO_FILENAME);
-        $resizedName = $nameOnly . "-{$size}x{$size}." . $extension;
+        $resizedName = $nameOnly . "-{$size}x{$size}-{$version}." . $extension;
         $resizedPath = $cacheDir . '/' . $resizedName;
 
         if (!File::exists($resizedPath)) {
             $manager = new ImageManager(new Driver());
             
             $image = $manager->read($originalPath);
-            $image->cover($size, $size);
+            
+            
+            $image->cover($size, $size, 'top'); 
+            
             $image->save($resizedPath);
         }
 

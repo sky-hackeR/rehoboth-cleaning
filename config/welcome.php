@@ -90,7 +90,7 @@ return [
             'description' => 'Rehoboth Cleaning and Janitorial Services provides hospital-grade disinfection and customized facility maintenance from Toronto to Quebec.',
             'cta_buttons' => [
                 ['text' => 'Start Your Quote', 'href' => '#quote', 'class' => 'btn-main'],
-                ['text' => 'WhatsApp Us', 'href' => 'https://wa.me/yournumber', 'class' => 'btn-main btn-line wow fadeInUp text-dark', 'style' => 'margin-left:10px;'],
+                ['text' => 'WhatsApp Us', 'href' => 'https://wa.me/+2348082574927', 'class' => 'btn-main btn-line wow fadeInUp text-dark', 'style' => 'margin-left:10px;'],
             ],
             'hero_image' => 'images/misc/1.webp',
         ],
