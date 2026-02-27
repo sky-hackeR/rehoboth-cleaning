@@ -1,64 +1,3 @@
-{{-- @extends('layouts.app')
-
-@section('content')
-    @php
-        $top = config('about.top_section', []);
-        $title = $top['title'] ?? 'About Us';
-        $subtitle = $top['subtitle'] ?? 'Enjoy a spotless space with our expert cleaning team. Affordable, eco-friendly, and tailored to your needs!';
-        $image = $top['image'] ?? 'images/misc/6.webp';
-        $decorImage = $top['decor_image'] ?? 'images/deco/s1.webp';
-        $fallback = config('about.fallback', []);
-    @endphp
-
-    <div class="no-bottom" id="content">
-
-        <div id="top"></div>
-
-        <!-- HERO SECTION -->
-        <section class="bg-color-3 section-dark text-light pb-0 relative overflow-hidden">
-            <img src="{{ asset($decorImage) }}"
-                class="w-5 mt-min-60 abs start-10 bottom-10 wow scaleOut"
-                alt="">
-
-            <div id="shine-wrapper">
-                <div class="template shine"></div>
-            </div>
-
-            <div class="container relative z-1000">
-                <div class="row g-3 align-items-center">
-
-                    <div class="col-lg-6">
-                        <div class="relative z-1000">
-                            <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">
-                                {{ $title }}
-                            </h1>
-
-                            <p class="lead col-lg-10 mb-0 wow fadeInUp"
-                            data-wow-delay=".4s">
-                                {{ $subtitle }}
-                            </p>
-
-                            <div class="spacer-single"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <img src="{{ asset($image) }}"
-                            class="w-100"
-                            data-0="transform: translateY(0px);"
-                            data-500="transform: translateY(300px);"
-                            alt="">
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-@endsection --}}
-
-
 @extends('layouts.app')
 
 @section('content')
@@ -68,9 +7,9 @@
     $sections = config('about.content_sections', []);
 @endphp
 
-<div id="content" class="no-bottom">
+<div id="content" class="no-bottom" style="padding-top: auto !important; margin-top: 0 !important;">
 
-    <section class="bg-color-3 section-dark text-light pb-0 relative overflow-hidden">
+    <section class="bg-color-3 section-dark text-light pb-0 pt-4 relative overflow-hidden">
         <img src="{{ asset($top['decor_image'] ?? '') }}" class="w-5 mt-min-60 abs start-10 bottom-10 wow scaleOut" alt="">
         <div id="shine-wrapper"><div class="template shine"></div></div>
 
@@ -79,7 +18,7 @@
 
                 <div class="col-lg-6">
                     <div class="relative z-1000">
-                        <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">{{ $top['title'] ?? '' }}</h1>
+                        <h1 class="wow fadeInUp mb-1" data-wow-delay=".2s">{{ $top['title'] ?? '' }}</h1>
                         <p class="lead col-lg-10 mb-0 wow fadeInUp" data-wow-delay=".4s">{{ $top['subtitle'] ?? '' }}</p>
                         <div class="spacer-single"></div>
                     </div>

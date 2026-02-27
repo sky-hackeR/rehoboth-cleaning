@@ -11,12 +11,11 @@
         $fallback = config('location.fallback', []);
     @endphp
 
-    <div class="no-bottom" id="content">
+    <div class="no-bottom" id="content" style="padding-top: 2 !important; margin-top: 0 !important;">
 
         <div id="top"></div>
 
-        <!-- HERO SECTION -->
-        <section class="bg-color-3 section-dark text-light pb-0 relative overflow-hidden">
+        <section class="bg-color-3 section-dark text-light pb-0 pt-4 relative overflow-hidden">
             <img src="{{ asset($decorImage) }}"
                 class="w-5 mt-min-60 abs start-10 bottom-10 wow scaleOut"
                 alt="">
@@ -30,7 +29,7 @@
 
                     <div class="col-lg-6">
                         <div class="relative z-1000">
-                            <h1 class="wow fadeInUp mb-2" data-wow-delay=".2s">
+                            <h1 class="wow fadeInUp mb-1" data-wow-delay=".2s">
                                 {{ $title }}
                             </h1>
 
@@ -55,7 +54,6 @@
             </div>
         </section>
 
-        <!-- LOCATION GRID -->
         <section>
             <div class="container">
                 <div class="row g-4">
@@ -88,19 +86,16 @@
 
                                     <div class="relative overflow-hidden rounded-1 shadow-soft">
 
-                                        <!-- Hover Button -->
                                         <div class="absolute z-2 start-0 w-100 abs-middle fs-36 text-white text-center">
                                             <span class="btn-main hover-op-1">
                                                 View Location
                                             </span>
                                         </div>
 
-                                        <!-- Image -->
                                         <img src="{{ $imagePath }}"
                                             class="img-fluid hover-scale-1-2"
                                             alt="{{ $city }}">
 
-                                        <!-- Bottom Info Card -->
                                         <div class="hover-op-0 abs p-3 bottom-0 text-center text-dark w-100">
                                             <div class="bg-white rounded-1 p-4">
                                                 <h4 class="mb-0">

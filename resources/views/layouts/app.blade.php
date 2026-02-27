@@ -40,8 +40,8 @@
         </div>
         <div class="scrollbar-v show-on-scroll"></div>
 
-        <!-- Page Preloader -->
-        <div id="de-loader"></div>
+        {{-- <!-- Page Preloader -->
+        <div id="de-loader"></div> --}}
 
         <!-- Header -->
         @include('partials.header')
@@ -80,6 +80,40 @@
 
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const quoteLinks = document.querySelectorAll('a[href*="#quote"]');
+            
+            quoteLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href.startsWith('#') || href === window.location.pathname + '#quote' || (window.location.pathname === '/' && href.includes('#quote'))) {
+                        const target = document.getElementById('quote');
+                        if (target) {
+                            e.preventDefault();
+                            window.scrollTo({
+                                top: target.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            if (window.location.hash === '#quote') {
+                setTimeout(() => {
+                    const target = document.getElementById('quote');
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 100, 
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 500); 
+            }
+        });
+
+
         $(window).on("load", function(){
             $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
             $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
@@ -98,7 +132,6 @@
             });
         });
     </script>
-
     @livewireScripts
 </body>
 </html>

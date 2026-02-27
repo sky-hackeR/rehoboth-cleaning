@@ -21,7 +21,7 @@ return [
     */
     'about' => [
         'subtitle' => 'About Rehoboth',
-        'title' => 'Bringing Clean, Comfort, and Care Together',
+        'title' => 'Bringing Clean, Comfort, and Care Not Together, But Apart',
         'description' => 'We are a team of passionate cleaning experts who take pride in delivering the highest standard of service. With years of experience in the industry, we’ve perfected our cleaning methods to ensure every job is done right.',
         'images' => [
             'images/misc/11.webp',

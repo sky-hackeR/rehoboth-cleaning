@@ -73,7 +73,7 @@ return [
         // Call-to-Action
         'cta' => [
             'button_text' => 'Get Instant Quote',
-            'button_url' => '#quote',
+            'button_url' => '/#quote',
         ],
 
     ],
@@ -89,7 +89,7 @@ return [
             'title' => 'Exceptional Clean for <br> <span class="id-color-2">Exceptional Businesses</span>',
             'description' => 'Rehoboth Cleaning and Janitorial Services provides hospital-grade disinfection and customized facility maintenance from Toronto to Quebec.',
             'cta_buttons' => [
-                ['text' => 'Start Your Quote', 'href' => '#quote', 'class' => 'btn-main'],
+                ['text' => 'Start Your Quote', 'href' => '/#quote', 'class' => 'btn-main'],
                 ['text' => 'WhatsApp Us', 'href' => 'https://wa.me/+2348082574927', 'class' => 'btn-main btn-line wow fadeInUp text-dark', 'style' => 'margin-left:10px;'],
             ],
             'hero_image' => 'images/misc/1.webp',
@@ -99,7 +99,7 @@ return [
             'subtitle' => 'About Rehoboth',
             'title' => 'Bringing Clean, Comfort, and Care Together',
             'description' => 'We are a team of passionate cleaning experts who take pride in delivering the highest standard of service. With years of experience in the industry, we’ve perfected our cleaning methods to ensure every job is done right.',
-            'cta_button' => ['text' => 'Get Instant Quote', 'href' => '#quote', 'class' => 'btn-main bg-color-2 text-dark'],
+            'cta_button' => ['text' => 'Get Instant Quote', 'href' => '/#quote', 'class' => 'btn-main bg-color-2 text-dark'],
             'images' => [
                 'images/misc/11.webp',
                 'images/misc/3.webp',
