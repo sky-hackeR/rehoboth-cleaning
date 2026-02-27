@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\WhatsAppController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,6 @@ Route::post('/whatsapp/webhook', [WhatsAppController::class, 'handle'])
 // --- Thank You / Success Page ---
 Route::view('/quote-success', 'pages.thanks')->name('quote.success');
 Route::get('/quote', \App\Livewire\QuoteWizard::class)->name('quote');
+
+Route::post('/contact/send', [ContactController::class, 'send'])
+    ->name('contact.send');
